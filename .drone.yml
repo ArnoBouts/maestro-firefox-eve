@@ -6,7 +6,7 @@ pipeline:
 
   update-base-image:
     image: no-cloud.fr/eve/sh
-    command: curl -I -Ls -o /dev/null -w %{url_effective} 'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=fr' | cut -d'/' -f7
+    sh_cmd: curl -I -Ls -o /dev/null -w %{url_effective} 'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=fr' | cut -d'/' -f7
     variable: FIREFOX_VERSION
 
   eve-push:
